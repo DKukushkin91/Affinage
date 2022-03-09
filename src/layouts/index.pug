@@ -1,0 +1,35 @@
+extends ../templates/_layout
+
+block page
+	section.section
+		.section__container
+			.section__wrap
+				.section__slider
+					.section__slider-wrap
+						.section__slide
+							.section__img
+								img(src="/img/img1.jpg", alt="")
+						.section__slide.section__slide--active
+							.section__img
+								img(src="/img/img3.jpg", alt="")
+				.section__content
+					.section__numbers
+						span.section__num (1)
+						span.section__num (3)
+					.section__title-content
+						h1.section__title Affinage
+					.section__text-content
+						.section__slogan-wrap
+							span.section__slogan-text очень хороший слоган
+							span.section__slogan-block
+								svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="184px" height="289px")
+									path(fill-rule="evenodd"  stroke-width="1px" fill-opacity="0" d="M3.499,3.499 L180.499,3.499 L142.499,285.499 L3.499,285.499 L3.499,3.499 Z")
+							span.section__circle-text Ural 03
+						.section__slider-nav
+							button.section__slider-btn.section__slider-btn--prev
+							.section__slider-content
+								span.section__date
+									span.section__date-num.section__date-num--fz 13
+									span.section__date-line
+									span.section__date-num 7
+							button.section__slider-btn.section__slider-btn--next

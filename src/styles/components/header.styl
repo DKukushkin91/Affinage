@@ -1,0 +1,37 @@
+.header
+	width 100%
+
+	&__container
+		width 100%
+		max-width: 1440px
+		margin: 0 auto
+		padding: 35px 80px 30px 35px
+		display flex
+		justify-content: space-between
+		min-height: 182px
+
+	&__logo
+		max-width: 23px
+		align-self: flex-start
+
+	&__burger-btn
+		display flex
+		align-items: center
+		justify-content center
+		flex-direction: column
+		background: 0
+		border: 0
+		width 52px
+		height 52px
+		border-image url(/img/border-img.png) 29 fill / 54px / 0px round
+		align-self: flex-end
+
+		& span
+			width 20px
+			height 2px
+			background-color: $black
+			display block
+
+			&:not(:last-child)
+				margin-bottom 3px
+

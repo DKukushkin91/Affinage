@@ -1,0 +1,233 @@
+.section
+	width 100%
+
+	&__container
+		width 100%
+		max-width: 1440px
+		padding: 0 80px
+		margin: 0 auto
+
+	&__wrap
+		display: grid
+
+	&__slider
+		width 100%
+		grid-area: 1/-1
+
+	&__slider-wrap
+		width 100%
+		position relative
+		display flex
+		flex-direction: row
+		align-items: flex-start
+
+	&__slide
+		max-width: 800px
+		height: 525px
+		flex: 1 0 auto
+		transform: translate(0, -16%)
+
+	&__img
+		height 100%
+		position relative
+
+		& img
+			height 100%
+			object-fit: cover
+
+		&::before
+			content: ''
+			position absolute
+			width 100%
+			height 100%
+			display block
+			background-color: rgba(247, 230, 17, 0.6)
+
+	&__slide--active
+		z-index 1
+		max-width: 860px
+		height 490px
+		position: absolute
+		bottom 30px
+		right 0
+		transform: translate(0, 0)
+
+	&__content
+		grid-area: 1/-1
+		position relative
+		z-index 9999
+		display grid
+		width 100%
+		max-width: 1000px
+		margin: 0 auto
+
+	&__title-content
+		grid-area: 1/-1
+		display flex
+		justify-content: center
+		align-items: center
+		position relative
+		z-index 2
+
+	&__title
+		font-family: $Philosopher
+		font-size 140px
+		font-weight 400
+		line-height 168px
+		text-align: center
+		text-transform: uppercase
+		color $white
+		letter-spacing: 50px
+		transform: translate(5px, -27%)
+
+	&__numbers
+		position absolute
+		top 0
+		left 0
+		min-height: 96px
+		display flex
+		flex-direction: column
+		justify-content: space-between
+
+	&__num
+		font-family $Geometria
+		font-size 14px
+		line-height 17px
+		color: $black
+		font-weight 300
+
+	&__text-content
+		grid-area: 1/-1
+		padding 30px 63px 35px 100px
+		display grid
+		grid-template-columns: 1fr 1fr
+
+	&__slogan-wrap
+		display flex
+		flex-direction: row
+		flex-wrap: wrap
+		align-items: flex-start
+		padding-bottom 121px
+
+	&__slogan-text
+		font-family $Philosopher
+		font-size 9px
+		font-style: italic
+		line-height 11px
+		writing-mode: vertical-lr
+		transform: rotate(-180deg)
+		display block
+		padding-left 18px
+		padding-top 19px
+		align-self: flex-end
+
+	&__slogan-block
+		display flex
+		width 184px
+		height 100%
+		stroke: $black
+		align-items: flex-end
+		margin-right 53px
+
+	&__circle-text
+		font-family: $Geometria
+		font-weight 400
+		font-size 17px
+		line-height 20px
+		text-align: left
+		color $white
+		text-transform: uppercase
+		padding: 12px 22px 5px
+		border 1px solid $black
+		border-radius: 50%
+		width 100px
+		height 100px
+		display flex
+		align-items: center
+		justify-content: center
+		position relative
+
+		&::before
+			content: '51'
+			position: absolute
+			bottom: 155%
+			left -30px
+			writing-mode: vertical-lr
+			transform: rotate(-180deg)
+			font-family $Geometria
+			font-weight 800
+			font-size 28px
+			line-height 33px
+			color #756e19
+
+	&__slider-nav
+		width 100%
+		max-width: 215px
+		justify-self: flex-end
+		position relative
+		display flex
+		align-items: center
+		flex-direction: column
+		padding: 50px 20px 30px
+
+	&__slider-btn
+		position absolute
+
+	&__slider-content
+		width 100%
+		max-width: 140px
+		background-color: #f7e611
+		height 100%
+		display flex
+		flex-direction: column
+		padding: 20px 40px 23px 20px
+		letter-spacing: 6px
+
+	&__date
+		width: 100%
+		display grid
+		grid-template-columns: repeat(2, 1fr)
+		align-items: flex-end
+		margin-top: auto
+
+	&__date-num
+		font-size 17px
+		line-height 100%
+		font-family $Geometria
+		color $black
+		font-weight 800
+		font-style: italic
+
+		&:last-child
+			grid-column: 2
+
+	&__date-num--fz
+		font-size 45px
+
+	&__date-line
+		width 18px
+		height 3px
+		background: $black
+		justify-self: center
+		margin-bottom 7px
+
+	&__slider-btn
+		background: 0
+		border 0
+		width 25px
+		height 25px
+		cursor pointer
+		position: absolute
+		z-index 99999
+		border-top 4px solid #8c841e
+		bottom: calc(50% - 72px)
+
+	&__slider-btn--prev
+		border-left: 4px solid #8c841e
+		transform: rotate(-45deg)
+		right calc(100% - 30px)
+
+	&__slider-btn--next
+		border-right: 4px solid #8c841e
+		transform: rotate(45deg)
+		left: calc(100% - 30px)
