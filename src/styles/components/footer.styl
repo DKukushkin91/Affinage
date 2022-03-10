@@ -3,6 +3,14 @@
 	background: transparent
 	min-height 85px
 
+	@media $l-md
+		min-height: auto
+
+	@media $sm
+		position fixed
+		bottom: 0
+		z-index 99999
+
 	&__container
 		width 100%
 		max-width: 1440px
@@ -14,6 +22,9 @@
 		justify-content: space-between
 		align-items: center
 
+		@media $xl
+			padding: 0 40px
+
 	&__img
 		width 100%
 		max-width: 215px
@@ -23,6 +34,18 @@
 		border-bottom: 9px solid $yellow
 		z-index 10
 
+		@media $l-md
+			border: 0
+			position fixed
+			bottom 0
+			left calc(50% - 90px)
+			max-width: 180px
+
+		@media $sm
+			bottom: -22px
+			left calc(50% - 145px / 2)
+			max-width: 145px
+
 	&__text-box
 		display flex
 		align-items: center
@@ -30,6 +53,15 @@
 		width calc(50% - 160px)
 		position relative
 		height 100%
+
+		@media $lg
+			width: calc(50% - 60px)
+
+		@media $l-md
+			display: none
+
+		@media $sm
+			display block
 
 	&__symbol
 		fill: $black
@@ -47,6 +79,9 @@
 	&__symbol--top-left
 		left: 0
 		bottom: calc(100% - 1px)
+
+		@media $sm
+			display: none
 
 	&__letter
 		font-family: $Philosopher
@@ -79,8 +114,19 @@
 				left 70.5%
 				overflow: hidden
 
+				@media $sm
+					height 25px
+					left: 4px
+					bottom 28px
+					z-index 9999
+
 				& svg
 					transform: translateY(282%)
+
+					@media $sm
+						transform: translateY(0)
+						height 25px
+						fill: transparent
 
 		&[data-val='N']
 			left 89.5%
@@ -94,6 +140,9 @@
 				left 23%
 				bottom 27%
 
+				@media $sm
+					display: none
+
 		&[data-val='G']
 			left 41%
 			bottom 50%
@@ -102,6 +151,9 @@
 				left: 39%
 				bottom 50%
 
+				@media $sm
+					display: none
+
 		&[data-val='E']
 			left 71.5%
 			bottom 18%
@@ -109,3 +161,11 @@
 			& + .footer__symbol
 				left 87%
 				bottom 49%
+
+				@media $sm
+					position fixed
+					left: 84%
+					bottom 56%
+
+		@media $sm
+			display none

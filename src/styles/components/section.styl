@@ -7,8 +7,18 @@
 		padding: 0 80px
 		margin: 0 auto
 
+		@media $xl
+			padding: 0 40px
+
+		@media $lg
+			padding: 0
+
 	&__wrap
 		display: grid
+		position relative
+
+		@media $l-md
+			position static
 
 	&__slider
 		width 100%
@@ -21,11 +31,44 @@
 		flex-direction: row
 		align-items: flex-start
 
+		@media $l-md
+			position static
+
 	&__slide
+		width 100%
 		max-width: 800px
 		height: 525px
 		flex: 1 0 auto
 		transform: translate(0, -16%)
+
+		@media $l-md
+			height auto
+			max-width 95%
+
+		@media $sm
+			max-width: 90%
+			transform: translate(-18%, -11%)
+
+	&__slide--active
+		z-index 1
+		max-width: 860px
+		height 490px
+		position: absolute
+		bottom 30px
+		right 0
+		transform: translate(0, 0)
+
+		@media $l-md
+			bottom 0
+			height auto
+			max-width: 95%
+
+		@media $md
+			height 50%
+
+		@media $sm
+			height 56%
+			max-width: 100%
 
 	&__img
 		height 100%
@@ -41,16 +84,7 @@
 			width 100%
 			height 100%
 			display block
-			background-color: rgba(247, 230, 17, 0.6)
-
-	&__slide--active
-		z-index 1
-		max-width: 860px
-		height 490px
-		position: absolute
-		bottom 30px
-		right 0
-		transform: translate(0, 0)
+			background-color: $yellow-rgba
 
 	&__content
 		grid-area: 1/-1
@@ -61,6 +95,9 @@
 		max-width: 1000px
 		margin: 0 auto
 
+		@media $md
+			position static
+
 	&__title-content
 		grid-area: 1/-1
 		display flex
@@ -68,6 +105,12 @@
 		align-items: center
 		position relative
 		z-index 2
+
+		@media $md
+			position static
+
+		@media $sm
+			display: none
 
 	&__title
 		font-family: $Philosopher
@@ -80,6 +123,17 @@
 		letter-spacing: 50px
 		transform: translate(5px, -27%)
 
+		@media $xl
+			transform: translate(0, -27%)
+			letter-spacing: 4.1vw
+
+		@media $lg
+			font-size 13vw
+
+		@media $md
+			font-size 9vw
+			padding: 0 65px
+
 	&__numbers
 		position absolute
 		top 0
@@ -88,6 +142,12 @@
 		display flex
 		flex-direction: column
 		justify-content: space-between
+
+		@media $xl
+			padding-left: 20px
+
+		@media $md
+			display none
 
 	&__num
 		font-family $Geometria
@@ -102,12 +162,26 @@
 		display grid
 		grid-template-columns: 1fr 1fr
 
+		@media $lg
+			grid-template-columns: 1fr auto
+			padding-left 110px
+
+		@media $md
+			padding: 0 35px
+
+		@media $sm
+			padding: 0 20px
+
 	&__slogan-wrap
 		display flex
 		flex-direction: row
 		flex-wrap: wrap
 		align-items: flex-start
 		padding-bottom 121px
+
+		@media $md
+			justify-content: center
+			padding 0
 
 	&__slogan-text
 		font-family $Philosopher
@@ -121,6 +195,17 @@
 		padding-top 19px
 		align-self: flex-end
 
+		@media $lg
+			padding-top 0
+
+		@media $md
+			align-self: center
+			margin-right auto
+
+		@media $sm
+			margin-top: auto
+			padding-top 5px
+
 	&__slogan-block
 		display flex
 		width 184px
@@ -128,6 +213,9 @@
 		stroke: $black
 		align-items: flex-end
 		margin-right 53px
+
+		@media $md
+			display none
 
 	&__circle-text
 		font-family: $Geometria
@@ -160,6 +248,15 @@
 			line-height 33px
 			color #756e19
 
+			@media $md
+				display none
+
+		@media $md
+			margin-left 47px
+
+		@media $sm
+			display: none
+
 	&__slider-nav
 		width 100%
 		max-width: 215px
@@ -170,18 +267,50 @@
 		flex-direction: column
 		padding: 50px 20px 30px
 
-	&__slider-btn
-		position absolute
+		@media $lg
+			padding: 50px 33px 30px
+
+		@media $l-md
+			flex-direction: row
+			flex-wrap: wrap
+			align-items: flex-end
+			padding: 50px 0 30px
+
+		@media $md
+			padding 0
+
+		@media $sm
+			max-width: 100%
+			align-items: center
+			min-height: 48%
+			justify-content: space-between
+			padding: 0 25px
+			position: absolute
+			bottom 0
+			right 0
+			align-items: center
 
 	&__slider-content
 		width 100%
 		max-width: 140px
-		background-color: #f7e611
+		background-color: $yellow
 		height 100%
 		display flex
 		flex-direction: column
 		padding: 20px 40px 23px 20px
 		letter-spacing: 6px
+
+		@media $l-md
+			height auto
+
+		@media $sm
+			position absolute
+			bottom 0
+			right 0
+			padding 0
+			clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+			min-height: 100px
+			width 33%
 
 	&__date
 		width: 100%
@@ -189,6 +318,10 @@
 		grid-template-columns: repeat(2, 1fr)
 		align-items: flex-end
 		margin-top: auto
+
+		@media $sm
+			grid-template-columns: 1fr
+			justify-items: right
 
 	&__date-num
 		font-size 17px
@@ -204,12 +337,23 @@
 	&__date-num--fz
 		font-size 45px
 
+		@media $sm
+			font-size 20px
+			padding: 17px 13px 23px 20px
+
+	&__date-num--display
+		@media $sm
+			display: none
+
 	&__date-line
 		width 18px
 		height 3px
 		background: $black
 		justify-self: center
 		margin-bottom 7px
+
+		@media $sm
+			display none
 
 	&__slider-btn
 		background: 0
@@ -219,15 +363,73 @@
 		cursor pointer
 		position: absolute
 		z-index 99999
-		border-top 4px solid #8c841e
+		border-top 4px solid $dark-yellow
 		bottom: calc(50% - 72px)
 
+		@media $l-md
+			position static
+			flex: 0 1 auto
+			margin-bottom 38px
+
 	&__slider-btn--prev
-		border-left: 4px solid #8c841e
+		border-left: 4px solid $dark-yellow
 		transform: rotate(-45deg)
 		right calc(100% - 30px)
 
 	&__slider-btn--next
-		border-right: 4px solid #8c841e
+		border-right: 4px solid $dark-yellow
 		transform: rotate(45deg)
 		left: calc(100% - 30px)
+
+	&__sup-text
+		font-family $Geometria
+		font-weight 400
+		font-size: 85px
+		line-height 100%
+		color transparent
+		display block
+		-webkit-text-stroke: 1px $black
+		position: absolute
+
+		@media $md
+			display none
+
+		@media $sm
+			display block
+			font-size 60px
+
+	&__sup-text[data-val='A']
+		bottom calc(100% + 53px)
+		right: 24.7%
+
+		@media $l-md
+			bottom: calc(50% + 180px)
+			z-index 1
+
+		@media $sm
+			bottom: calc(50% - 5px)
+			right 63.8%
+
+	&__sup-text[data-val='E']
+		bottom: calc(100% + -30px)
+		right 12%
+
+		@media $l-md
+			bottom: calc(50% + 120px)
+
+		@media $sm
+			bottom: calc(50% + 90px)
+			right 20%
+
+	&__sup-text[data-val='G']
+		bottom calc(100% - 107px)
+		right 18%
+		z-index 1
+
+		@media $l-md
+			bottom: calc(50% + 60px)
+			z-index 0
+
+		@media $sm
+			bottom: calc(50% + 10px)
+			right 39%
