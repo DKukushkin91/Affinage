@@ -1,11 +1,51 @@
 .section
 	width 100%
 
+	&::before
+		content: ''
+		width 50vw
+		height 100vh
+		background-color: $white
+		position absolute
+		top 0
+		right: 0
+		z-index -1
+
+		@media $l-md
+			display: none
+
+	&::after
+		content: ''
+		width 50vw
+		height 100vh
+		position: absolute
+		left 0
+		top 0
+		background: linear-gradient(90deg, rgb(254, 254, 254) 7%, rgb(238, 238, 238));
+		z-index -1
+
+		@media $l-md
+			display: none
+
 	&__container
 		width 100%
 		max-width: 1440px
 		padding: 0 80px
 		margin: 0 auto
+
+		&:before
+			content: ''
+			width 10%
+			height 50vh
+			position: absolute
+			bottom 0
+			left 1.6vw
+			background: linear-gradient(to right, #fdfdfd 0,#f0f0f0 108%)
+			background-repeat: repeat
+			box-shadow: -70px 4px 70px 0px rgba(253, 253, 253, 0.2);
+
+			@media $l-md
+				display: none
 
 		@media $xl
 			padding: 0 40px
@@ -19,6 +59,32 @@
 
 		@media $l-md
 			position static
+
+	&__side
+		position: absolute
+		left: -60px
+		top -42px
+		width fit-content
+		display flex
+		align-items: center
+		width 1.1%
+		height 100%
+		z-index 9999
+		transform: rotate(-180deg)
+		box-shadow: 0px -5px 80px 12px rgba(254, 254, 254, 0.6);
+
+		@media $xl
+			display: none
+
+	&__side-text
+		font-family $Geometria
+		font-weight 300
+		color #989898
+		font-style: italic
+		writing-mode: vertical-lr
+		font-size 12px
+		line-height 14px
+		display block
 
 	&__slider
 		width 100%
@@ -47,6 +113,7 @@
 
 		@media $sm
 			max-width: 90%
+			height: 34vh
 			transform: translate(-18%, -11%)
 
 	&__slide--active
