@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Affinage</title>
     <link href="../css/main.css" type="text/css" rel="stylesheet">
-    <link href="../css/vendor.css" type="text/css" rel="stylesheet">
   </head>
   <body lang="ru-RU">
     <div class="fix-box">
@@ -26,13 +25,16 @@
             <div class="section__container">
               <div class="section__wrap">
                 <div class="section__side"><span class="section__side-text">тестовое задание</span></div>
-                <div class="section__slider">
+                <div class="section__slider js-slider">
                   <div class="section__slider-wrap">
-                    <div class="section__slide">
+                    <div class="section__slide js-slide">
+                      <div class="section__img"><img src="/img/img3.jpg" alt=""></div>
+                    </div>
+                    <div class="section__slide js-slide">
                       <div class="section__img"><img src="/img/img1.jpg" alt=""></div>
                     </div>
-                    <div class="section__slide section__slide--active">
-                      <div class="section__img"><img src="/img/img3.jpg" alt=""></div>
+                    <div class="section__slide js-slide">
+                      <div class="section__img"><img src="/img/img2.jpg" alt=""></div>
                     </div>
                   </div>
                 </div><span class="section__sup-text" data-val="A">A</span><span class="section__sup-text" data-val="E">E</span><span class="section__sup-text" data-val="G">G</span>
@@ -47,9 +49,9 @@
                           <path fill-rule="evenodd" stroke-width="1px" fill-opacity="0" d="M3.499,3.499 L180.499,3.499 L142.499,285.499 L3.499,285.499 L3.499,3.499 Z"></path>
                         </svg></span><span class="section__circle-text">Ural 03</span></div>
                     <div class="section__slider-nav">
-                      <button class="section__slider-btn section__slider-btn--prev"></button>
+                      <button class="section__slider-btn section__slider-btn--prev js-btn-prev"></button>
                       <div class="section__slider-content"><span class="section__date"><span class="section__date-num section__date-num--fz">13</span><span class="section__date-line"></span><span class="section__date-num section__date-num--display">7</span></span></div>
-                      <button class="section__slider-btn section__slider-btn--next"></button>
+                      <button class="section__slider-btn section__slider-btn--next js-btn-next"></button>
                     </div>
                   </div>
                 </div>
@@ -83,6 +85,5 @@
       </footer>
     </div>
   </body>
-  <script src="../scripts/vendor.js" type="text/javascript"></script>
   <script src="../scripts/main.js" type="text/javascript"></script>
 </html>
