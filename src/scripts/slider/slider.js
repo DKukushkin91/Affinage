@@ -11,6 +11,8 @@ export const slider = () => {
 		slides[activeSlide].classList.add('section__slide--active');
 
 		const slideHandler = (evt) => {
+			const addClass = () => slides[(activeSlide + 1) % slides.length].classList.add('section__slide--next');
+
 			if(evt.target === prevButton) {
 				activeSlide > 0 ? activeSlide-- : activeSlide = slidesLength;
 			} else {
@@ -22,8 +24,9 @@ export const slider = () => {
 				el.classList.remove('section__slide--next');
 			})
 
-			slides[activeSlide].classList.add('section__slide--active');
-			slides[(activeSlide + 1) % slides.length].classList.add('section__slide--next');
+			slides[activeSlide].classList.add('section__slide--active')
+
+			setTimeout(addClass, 500);
 		}
 
 		nextButton.addEventListener('click', slideHandler);

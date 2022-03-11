@@ -1,7 +1,19 @@
 @keyframes slide-active
 	0%
-		right: 30%
+		clip-path: polygon(0% 0, 0% 0, 0% 0, 0% 0);
+
+	50%
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+
+	100%
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
 @keyframes slide
 	0%
-		transform: translate(50%, -20%)
+		clip-path: polygon(0% 0, 0% 0, 0% 0, 0% 0);
+
+	50%
+		clip-path: polygon(0 0, 100% 0, 50% 50%, 0 100%);
+
+	100%
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

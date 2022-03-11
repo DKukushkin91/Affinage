@@ -40,7 +40,7 @@
 			position: absolute
 			bottom 0
 			left 1.6vw
-			background: linear-gradient(to right, #fdfdfd 0,#f0f0f0 108%)
+			background: $bg-gradient
 			background-repeat: repeat
 			box-shadow: -70px 4px 70px 0px rgba(253, 253, 253, 0.2);
 
@@ -79,7 +79,7 @@
 	&__side-text
 		font-family $Geometria
 		font-weight 300
-		color #989898
+		color $side-text
 		font-style: italic
 		writing-mode: vertical-lr
 		font-size 12px
@@ -122,7 +122,7 @@
 		position: absolute
 		bottom 30px
 		right 0
-		// animation: slide-active 2s ease
+		animation: slide-active 3s ease-out
 		transform: translate(0, 0)
 		opacity: 1
 
@@ -139,7 +139,7 @@
 
 	&__slide--next
 		z-index 1
-		// animation: slide 2s ease
+		animation: slide 2s ease-out
 		opacity: 1
 
 	&__img
@@ -318,7 +318,7 @@
 			font-weight 800
 			font-size 28px
 			line-height 33px
-			color #756e19
+			color $dark-yellow
 
 			@media $md
 				display none
